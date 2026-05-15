@@ -1,0 +1,171 @@
+/* =========================================
+   1. RESET E CONFIGURAÇÕES GERAIS
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    background-color: #16504d;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. COMPONENTE: ONDA DO TOPO
+   ========================================= */
+.onda-topo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 10;
+}
+
+.onda-topo svg {
+    width: 100%;
+    height: auto;
+}
+
+/* =========================================
+   3. ESTRUTURA DAS PÁGINAS
+   ========================================= */
+.pagina-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.conteudo {
+    position: relative;
+    z-index: 5;
+    padding-top: 200px;
+    animation: fadeIn 1s ease-out;
+}
+
+.titulo-sessao {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.texto-informativo p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* --- Box de Citação --- */
+.box-citacao {
+    position: relative;
+    margin-top: 50px;
+    padding: 40px 30px;
+    background-color: rgba(186, 161, 230, 0.1);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.aspas-abrir, .aspas-fechar {
+    color: #26d3c4;
+    font-size: 2.5rem;
+    position: absolute;
+    opacity: 0.6;
+}
+
+.aspas-abrir { top: 10px; left: 10px; }
+.aspas-fechar { bottom: 10px; right: 10px; }
+
+.texto-quote {
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.autor-quote {
+    display: block;
+    color: #a1e6e1;
+    font-weight: bold;
+}
+
+/* --- Lista de Sinais --- */
+.lista-sinais {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.lista-sinais li {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    border-left: 4px solid #C026D3;
+}
+
+.lista-sinais li strong {
+    color: #a1e6e4;
+}
+
+/* --- Imagens e Gráficos --- */
+.container-grafico, .container-ilustracao {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.img-grafico, .img-final {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.img-final {
+    max-width: 600px; /* Deixa as mãos um pouco maiores */
+    margin-top: 2px;
+}
+
+/* =========================================
+   4. NAVEGAÇÃO
+   ========================================= */
+.navegacao {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+.btn-voltar, .btn-proximo {
+    color: #a1e6e3;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #a1e6df;
+    padding: 10px 25px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.btn-voltar:hover, .btn-proximo:hover {
+    background-color: #a1e5e6;
+    color: #164f50;
+}
+
+/* =========================================
+   5. ANIMAÇÕES
+   ========================================= */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .conteudo { padding-top: 150px; }
+}

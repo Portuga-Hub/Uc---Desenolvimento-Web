@@ -1,0 +1,117 @@
+/* Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #16504c; /* Roxo escuro da imagem */
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+}
+
+.pagina-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Largura máxima para leitura confortável */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Onda do Topo */
+.onda-topo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 1;
+}
+
+/* Conteúdo Principal */
+.conteudo {
+    position: relative;
+    z-index: 2;
+    padding-top: 180px; /* Espaço para a onda do topo */
+}
+
+.titulo-sessao {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.texto-informativo p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Estilização da Citação (Ebony) */
+.box-citacao {
+    position: relative;
+    margin-top: 50px;
+    padding: 40px 20px;
+    background-color: rgba(186, 161, 230, 0.1); /* Fundo lilás bem clarinho */
+    border-radius: 15px;
+    text-align: center;
+}
+
+.aspas-abrir, .aspas-fechar {
+    color: #26bfd3; /* Magenta do SVG */
+    font-size: 2.5rem;
+    position: absolute;
+    opacity: 0.7;
+}
+
+.aspas-abrir { top: 10px; left: 10px; }
+.aspas-fechar { bottom: 10px; right: 10px; }
+
+.texto-quote {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.autor-quote {
+    display: block;
+    font-size: 1.3rem;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+/* Botões de Navegação */
+.navegacao {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+
+.btn-voltar, .btn-proximo {
+    color: #a1e3e6;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: 1px solid #a1e6e3;
+    padding: 8px 20px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-voltar:hover, .btn-proximo:hover {
+    background-color: #a1e6e5;
+    color: #164850;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .conteudo { padding-top: 120px; }
+    .texto-quote { font-size: 1.2rem; }
+}

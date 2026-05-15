@@ -1,0 +1,125 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+/* 1. Fundo Roxo da Página com Gradiente sutil */
+.container-principal {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Um gradiente roxo profundo */
+    background: linear-gradient(135deg, #26b3d3 0%, #124b60 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.onda-topo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0; /* Remove espaços vazios abaixo do SVG */      
+}
+
+.onda-topo svg {
+    width: 100%;
+    height: auto;
+}
+
+/* 2. Configuração da Nova Imagem (image_1.png) */
+.moldura-img-simbolo {
+    position: absolute;
+    /* Posição sugerida: Canto inferior direito para não cobrir o texto */
+    bottom: 20px;
+    right: 20px;
+    /* Tamanho sugerido: menor, para ser um detalhe visual */
+    width: 300px;
+    height: auto;
+    z-index: 1; /* Fica à frente do fundo, mas atrás do texto/botão */
+     /* Muito sutil para não distrair */
+    pointer-events: none; /* Garante que cliques passem por ela para o botão */
+}
+
+.img-simbolo {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* 3. Estilização dos Textos */
+.conteudo {
+    position: relative;
+    z-index: 2; /* Texto fica acima da imagem */
+    width: 100%;
+}
+
+.titulo {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(3rem, 15vw, 8rem);
+    color: #ffffff;
+    text-transform: uppercase;
+    line-height: 1;
+    text-shadow: 4px 4px 15px rgba(0,0,0,0.8); /* Aumentei o contraste da sombra */
+    margin-bottom: 10px;
+}
+
+.caixa-subtitulo {
+    display: inline-block;
+    background-color: rgba(161, 225, 230, 0.95);
+    padding: 12px 35px;
+    transform: rotate(-1.5deg);
+   
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+.subtitulo {
+    color: #ffffff;
+    font-size: clamp(1rem, 4vw, 2rem);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* 4. Botão */
+.btn-proximo {
+    position: absolute;
+    bottom: 50px;
+    z-index: 3; /* Botão fica acima de tudo */
+    background-color: #ffffff;
+    color: #164c50;
+    padding: 15px 45px;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    transition: 0.3s ease-out;
+}
+
+.btn-proximo:hover {
+    transform: scale(1.1);
+    background-color: #f0f0f0;
+}
+
+/* Ajuste para telas pequenas (Mobile) */
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 3.5rem;
+    }
+    .moldura-img-simbolo {
+        width: 120px; /* Reduz a imagem no mobile */
+        bottom: 110px; /* Ajusta a posição para não ficar atrás do botão */
+    }
+}

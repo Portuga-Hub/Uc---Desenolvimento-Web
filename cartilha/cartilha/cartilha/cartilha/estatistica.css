@@ -1,0 +1,253 @@
+/* =========================================
+   1. RESET E CONFIGURAÇÕES GERAIS
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    background-color: #165043; /* Roxo escuro profundo */
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. IDENTIDADE VISUAL: ONDA DO TOPO
+   (Presente em todas as páginas)
+   ========================================= */
+.onda-topo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 10;
+}
+
+.onda-topo svg {
+    width: 100%;
+    height: auto;
+}
+
+/* =========================================
+   3. LAYOUT DA CAPA (INDEX.HTML)
+   ========================================= */
+.container-capa {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Gradiente roxo sobre a imagem do punho */
+    background: 
+        linear-gradient(135deg, rgba(22, 80, 71, 0.85) 0%, rgba(10, 50, 43, 0.7) 100%),
+        url('simbolo.png'); 
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.titulo-capa {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(3.5rem, 15vw, 9rem);
+    text-transform: uppercase;
+    line-height: 1;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    z-index: 11;
+}
+
+.faixa-subtitulo {
+    display: inline-block;
+    background-color: rgba(38, 211, 182, 0.9); /* Cor magenta do SVG */
+    padding: 12px 40px;
+    transform: rotate(-1.5deg);
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 11;
+    margin-top: 10px;
+}
+
+.subtitulo-capa {
+    font-size: clamp(1rem, 4vw, 2.2rem);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* =========================================
+   4. ESTRUTURA DAS PÁGINAS INTERNAS
+   ========================================= */
+.pagina-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.conteudo {
+    position: relative;
+    z-index: 5;
+    padding-top: 200px; /* Espaço para não ficar sob a onda */
+    animation: fadeIn 1s ease-out;
+}
+
+.titulo-sessao {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.texto-informativo p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* --- Estilo da Citação (Página 2) --- */
+.box-citacao {
+    position: relative;
+    margin-top: 50px;
+    padding: 40px 30px;
+    background-color: rgba(186, 161, 230, 0.1);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.aspas-abrir, .aspas-fechar {
+    color: #26d3cd;
+    font-size: 2.5rem;
+    position: absolute;
+    opacity: 0.6;
+}
+
+.aspas-abrir { top: 10px; left: 10px; }
+.aspas-fechar { bottom: 10px; right: 10px; }
+
+.texto-quote {
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.autor-quote {
+    display: block;
+    color: #a1e6d2;
+    font-weight: bold;
+}
+
+/* --- Estilo da Lista de Sinais (Página 3) --- */
+.lista-sinais {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.lista-sinais li {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    border-left: 4px solid #26d3c2;
+    text-align: left;
+}
+
+.lista-sinais li strong {
+    color: #a1e6df;
+    font-size: 1.2rem;
+}
+
+/* --- Estilo do Gráfico (Página 4) --- */
+.container-grafico {
+    margin-top: 30px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.container-grafico h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #a1e6d4;
+}
+
+.img-grafico {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* =========================================
+   5. BOTÕES E NAVEGAÇÃO
+   ========================================= */
+.btn-iniciar {
+    position: absolute;
+    bottom: 50px;
+    background-color: #ffffff;
+    color: #16504d;
+    padding: 15px 45px;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    transition: 0.3s;
+    z-index: 20;
+}
+
+.btn-iniciar:hover {
+    transform: scale(1.05);
+}
+
+.navegacao {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+.btn-voltar, .btn-proximo {
+    color: #a1e6e1;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #a1e6db;
+    padding: 10px 25px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.btn-voltar:hover, .btn-proximo:hover {
+    background-color: #a1e6e5;
+    color: #16504b;
+}
+
+/* =========================================
+   6. ANIMAÇÕES E RESPONSIVIDADE
+   ========================================= */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .conteudo { padding-top: 150px; }
+    .container-capa { background-size: 85% auto; }
+}
+
+@media (max-width: 480px) {
+    .titulo-sessao { font-size: 1.8rem; }
+    .texto-informativo p { font-size: 1rem; }
+    .box-citacao { padding: 30px 15px; }
+}

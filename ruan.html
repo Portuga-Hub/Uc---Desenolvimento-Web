@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Minha Estante</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="ruan.css" />
+</head>
+<body>
+
+  <header>
+    <p class="header-label">Organiza &amp; Lê</p>
+    <h1>Minha <em>Estante</em></h1>
+  </header>
+
+  <div class="card">
+
+    <!-- Inputs -->
+    <div class="form-row">
+      <div class="input-wrap">
+        <input id="input-titulo" type="text" placeholder="Título do livro…" />
+      </div>
+      <button class="btn-add" onclick="adicionarLivro()">+ Adicionar</button>
+    </div>
+    <div class="author-row">
+      <input id="input-autor" type="text" placeholder="Autor (opcional)" />
+      <select class="genre-select" id="input-genero">
+        <option value="">Gênero</option>
+        <option value="Romance">Romance</option>
+        <option value="Ficção">Ficção</option>
+        <option value="Fantasia">Fantasia</option>
+        <option value="Terror">Terror</option>
+        <option value="Aventura">Aventura</option>
+        <option value="Biografia">Biografia</option>
+        <option value="Autoajuda">Autoajuda</option>
+        <option value="Técnico">Técnico</option>
+        <option value="Outro">Outro</option>
+      </select>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num c-total" id="stat-total">0</div>
+        <div class="stat-label">Total</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num c-read" id="stat-lidos">0</div>
+        <div class="stat-label">Lidos</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num c-unread" id="stat-nao">0</div>
+        <div class="stat-label">A Ler</div>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters">
+      <button class="filter-btn active" data-filtro="todos"  onclick="filtrar(this)">Todos</button>
+      <button class="filter-btn"        data-filtro="a-ler"  onclick="filtrar(this)">A Ler</button>
+      <button class="filter-btn"        data-filtro="lidos"  onclick="filtrar(this)">Lidos</button>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- List -->
+    <ul id="livros-lista"></ul>
+
+  </div>
+
+  <script src="ruan.js"></script>
+</body>
+</html>
